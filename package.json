@@ -4,9 +4,10 @@
   "description": "Bootstrap grid and u-prefixed utilities for BEM fans.",
   "main": "index.js",
   "scripts": {
-    "scss": "npx node-sass scss/ -o dist/css",
-    "prefix": "npx postcss --config build/postcss.config.js --replace dist/css/u-bootstrap.css",
-    "build": "npx npm-run-all -s scss prefix"
+    "css-compile": "npx node-sass scss/ -o dist/css",
+    "u-prefix": "npx postcss --config build/postcss.config.js --replace dist/css/u-bootstrap.css",
+    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/u-bootstrap.min.css dist/css/u-bootstrap.css",
+    "dist": "npx npm-run-all -s css-compile u-prefix css-minify"
   },
   "author": "",
   "license": "ISC",
