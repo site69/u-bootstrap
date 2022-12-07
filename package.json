@@ -1,24 +1,24 @@
 {
   "name": "u-bootstrap",
-  "version": "1.0.0",
+  "version": "5.2.3-1",
   "description": "Bootstrap grid and u-prefixed utilities for BEM fans.",
   "main": "index.js",
   "scripts": {
-    "css-compile": "npx node-sass scss/ -o dist/css",
-    "u-prefix": "npx postcss --config build/postcss.config.js --replace dist/css/u-bootstrap.css",
-    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/u-bootstrap.min.css dist/css/u-bootstrap.css",
-    "dist": "npx npm-run-all -s css-compile u-prefix css-minify"
+    "dist": "npm-run-all -s css-compile u-prefix css-minify",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --load-path=node_modules/bootstrap/scss/ scss/:dist/css/",
+    "u-prefix": "postcss --config build/postcss.config.js --replace dist/css/u-bootstrap.css",
+    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.4.1"
+    "bootstrap": "^5.2.3"
   },
   "devDependencies": {
-    "clean-css-cli": "^4.3.0",
-    "node-sass": "^4.13.1",
+    "clean-css-cli": "^5.6.1",
+    "sass": "^1.55.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.0",
-    "postcss-prefixer": "^2.1.2"
+    "postcss-cli": "^10.0.0",
+    "postcss-prefixer": "^2.1.3"
   }
 }
