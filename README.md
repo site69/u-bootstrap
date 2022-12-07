@@ -2,8 +2,8 @@
 
 u-Bootstrap is a special [Bootstrap](https://github.com/twbs/bootstrap) build. It strips out all the javascript, content styles, components. And only provides the following:
 
-- Bootstrap [grid system classes](https://getbootstrap.com/docs/4.1/layout/grid/) without any additional prefixes;
-- All Bootstrap [utility classed](https://getbootstrap.com/docs/4.1/utilities/borders/), prefixed with `u-` string.
+- Bootstrap [grid system classes](https://getbootstrap.com/docs/5.2/layout/grid/) without any additional prefixes;
+- All Bootstrap [utility classes](https://getbootstrap.com/docs/5.2/utilities/api/), prefixed with `u-` string.
 
 
 ## How to use
@@ -19,8 +19,8 @@ u-Bootstrap is a special [Bootstrap](https://github.com/twbs/bootstrap) build. I
 <html>
 <head>
     ...
-    <link rel="stylesheet" href="vendor/u-bootstrap/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="vendor/u-bootstrap/css/u-bootstrap.css">
+    <link rel="stylesheet" href="vendor/u-bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="vendor/u-bootstrap/css/u-bootstrap.min.css">
     ...
 </head>
 <body>
